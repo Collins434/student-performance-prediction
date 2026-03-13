@@ -1,0 +1,12 @@
+import streamlit as st
+
+st.title("Student Performance Prediction")
+
+st.header("Enter Student Details")
+
+hours = st.number_input("Hours Studied", 0, 24)
+attendance = st.slider("Attendance (%)", 0, 100)
+
+if st.button("Predict Performance"):
+    prediction = hours * 5 + attendance * 0.3
+    st.success(f"Predicted Score: {prediction}")
